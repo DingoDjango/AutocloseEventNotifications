@@ -4,5 +4,5 @@
 	<author>Dingo</author>
 	<url>https://ludeon.com/forums/index.php?topic=26077</url>
 	<targetVersion>0.15.0</targetVersion>
-	<description>Closes good and non-urgent event notifications ("New Lovers", "Eclipse" etc.) automatically if they have been active for more than 12 in-game hours.</description>
+	<description>Automatically closes notifications that have been active for longer than 12 in-game hours.\n\nYou can configure which notification types to autoclose, as well as display a message when a notification is closed by going to Menu &gt; Options &gt; Mod Settings.</description>
 </ModMetaData>

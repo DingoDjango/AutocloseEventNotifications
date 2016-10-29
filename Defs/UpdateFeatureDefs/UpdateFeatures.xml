@@ -13,4 +13,10 @@
 		<content>Autoclose Event Notifications will automatically close non-urgent notifications if they have been active for at least 12 in-game hours.\n\nYou can enable a message to be displayed when a notification is closed automatically (off by default).\n\nTo turn on the message display, go to Menu &gt; Options &gt; Mod Settings.</content>
 	</HugsLib.UpdateFeatureDef>
 
+	<HugsLib.UpdateFeatureDef ParentName="ACENUpdateFeatures">
+		<defName>ACEN_1_1_0</defName>
+		<assemblyVersion>1.1.0</assemblyVersion>
+		<content>ACEN can be configured to close good (blue), bad (yellow) and urgent (red) events.\n\nTo choose which notification types to autoclose, go to Menu &gt; Options &gt; Mod Settings.</content>
+	</HugsLib.UpdateFeatureDef>
+
 </Defs>

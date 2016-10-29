@@ -23,7 +23,16 @@ public class ACENMenu : ModBase
 
     private void UpdateDefs()
     {
-        var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show a message when removing notifications", "A silent message will be displayed when removing an old non-urgent notification.", false);
+        var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show a message when removing notifications", "A silent message will be displayed when removing old notifications.", false);
         AutocloseEventBoxes.ShowMessage = showMessage.Value;
+
+        var closeGood = Settings.GetHandle<bool>("ACENCloseGood", "Autoclose good (blue) notifications", "ACEN will automatically close positive (blue) event notifications.", true);
+        AutocloseEventBoxes.CloseGood = closeGood.Value;
+
+        var closeNonUrgent = Settings.GetHandle<bool>("ACENCloseNonUrgent", "Autoclose bad (yellow) notifications", "ACEN will automatically close negative (yellow) event notifications.", true);
+        AutocloseEventBoxes.CloseNonUrgent = closeNonUrgent.Value;
+
+        var closeUrgent = Settings.GetHandle<bool>("ACENCloseUrgent", "Autoclose urgent (red) notifications", "ACEN will automatically close urgent (red) event notifications.", false);
+        AutocloseEventBoxes.CloseUrgent = closeUrgent.Value;
     }
 }

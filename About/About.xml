@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Autoclose Event Notifications</name>
+	<author>Dingo</author>
+	<url>https://ludeon.com/forums/index.php?topic=26077</url>
+	<targetVersion>0.15.0</targetVersion>
+	<description>Closes good and non-urgent event notifications ("New Lovers", "Eclipse" etc.) automatically if they have been active for more than 12 in-game hours.</description>
+</ModMetaData>

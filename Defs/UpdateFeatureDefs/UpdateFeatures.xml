@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HugsLib.UpdateFeatureDef Abstract="true" Name="ACENUpdateFeatures">
+		<modNameReadable>Autoclose Event Notifications</modNameReadable>
+		<modIdentifier>AutocloseEventNotifications</modIdentifier>
+		<linkUrl>https://ludeon.com/forums/index.php?topic=26077.0</linkUrl>
+	</HugsLib.UpdateFeatureDef>
+
+	<HugsLib.UpdateFeatureDef ParentName="ACENUpdateFeatures">
+		<defName>ACEN_1_0_0</defName>
+		<assemblyVersion>1.0.0</assemblyVersion>
+		<content>Autoclose Event Notifications will automatically close non-urgent notifications if they have been active for at least 12 in-game hours.\n\nYou can enable a message to be displayed when a notification is closed automatically (off by default).\n\nTo turn on the message display, go to Menu &gt; Options &gt; Mod Settings.</content>
+	</HugsLib.UpdateFeatureDef>
+
+</Defs>

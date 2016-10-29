@@ -23,7 +23,7 @@ public class ACENMenu : ModBase
 
     private void UpdateDefs()
     {
-        var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show a message when removing notifications", "A silent message will be dispalyed when removing an old non-urgent notification.", false);
+        var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show a message when removing notifications", "A silent message will be displayed when removing an old non-urgent notification.", false);
         AutocloseEventBoxes.ShowMessage = showMessage.Value;
     }
 }

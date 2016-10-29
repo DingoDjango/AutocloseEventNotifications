@@ -23,7 +23,7 @@ public class ACENMenu : ModBase
 
     private void UpdateDefs()
     {
-        var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show a message when removing notifications", "A silent message will be displayed when removing old notifications.", false);
+        var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show message when closing notifications", "A silent message will be displayed when removing old notifications.", false);
         AutocloseEventBoxes.ShowMessage = showMessage.Value;
 
         var closeGood = Settings.GetHandle<bool>("ACENCloseGood", "Autoclose good (blue) notifications", "ACEN will automatically close positive (blue) event notifications.", true);

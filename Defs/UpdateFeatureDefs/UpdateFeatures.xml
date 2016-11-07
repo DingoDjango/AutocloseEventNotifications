@@ -20,8 +20,8 @@
 	</HugsLib.UpdateFeatureDef>
 
 	<HugsLib.UpdateFeatureDef ParentName="ACENUpdateFeatures">
-		<defName>ACEN_1_2_0</defName>
-		<assemblyVersion>1.2.0</assemblyVersion>
+		<defName>ACEN_1_2_5</defName>
+		<assemblyVersion>1.2.5</assemblyVersion>
 		<content>You may now configure when ACEN closes notifications in the mod's menu (default: after 12 hours).\n\nTo access the mod's menu, go to Mod Settings in RimWorld's Options menu.</content>
 	</HugsLib.UpdateFeatureDef>
 

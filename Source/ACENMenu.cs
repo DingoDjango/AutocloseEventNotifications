@@ -1,4 +1,5 @@
 ﻿using HugsLib;
+using RimWorld;
 
 namespace AutocloseEN
 {
@@ -25,7 +26,7 @@ namespace AutocloseEN
 		private void UpdateDefs()
 		{
 			var timetoClose = Settings.GetHandle<float>("ACENTimetoClose", "Close notifications after X hours", "ACEN will close notifications if they have been active for more than the defined amount of in-game hours.", 12f);
-			AutocloseEventBoxes.ACENTimer = 3f*timetoClose.Value;
+			AutocloseEventBoxes.ACENTimer = GenDate.TicksPerHour * timetoClose.Value;
 
 			var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show message when closing notifications", "A silent message will be displayed when removing old notifications.", false);
 			AutocloseEventBoxes.ShowMessage = showMessage.Value;

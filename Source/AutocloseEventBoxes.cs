@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using RimWorld;
 using Verse;
-using UnityEngine;
 
 namespace AutocloseEN
 {
@@ -17,19 +17,30 @@ namespace AutocloseEN
 
 		internal static bool CloseUrgent = false;
 
-        internal static float ACENTimer = 36f;
+		internal static Dictionary<Letter, int> letterSpawnTicks = new Dictionary<Letter, int>();
+
+		internal static float ACENTimer = 12 * GenDate.TicksPerHour; //12 in-game hours by default
 
 		public override void MapComponentTick()
 		{
-			if (Find.TickManager.TicksGame % 3600 == 0)
+			if (Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
 			{
 				var letters = letterStack.GetValue(Find.LetterStack) as List<Letter>;
 				if (letters.Count > 0)
 				{
-					for (int i = 0; i < letters.Count; i++)
+					for (int i = letters.Count - 1; i >= 0; i--)
 					{
-						float timeactive = Time.time - letters[i].arrivalTime;
-						if (timeactive >= ACENTimer)
+						var letter = letters[i];
+						int arrivalTick;
+						if (!letterSpawnTicks.TryGetValue(letter, out arrivalTick))
+						{
+							arrivalTick = Find.TickManager.TicksGame;
+							letterSpawnTicks[letter] = arrivalTick;
+						}
+
+						var deltaTick = Find.TickManager.TicksGame - arrivalTick;
+
+						if (deltaTick >= ACENTimer)
 						{
 							if (letters[i].LetterType == LetterType.Good && CloseGood == true)
 							{

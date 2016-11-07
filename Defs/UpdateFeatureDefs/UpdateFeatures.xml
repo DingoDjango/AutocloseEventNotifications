@@ -19,4 +19,10 @@
 		<content>ACEN can be configured to close good (blue), bad (yellow) and urgent (red) events.\n\nTo choose which notification types to autoclose, go to Menu &gt; Options &gt; Mod Settings.</content>
 	</HugsLib.UpdateFeatureDef>
 
+	<HugsLib.UpdateFeatureDef ParentName="ACENUpdateFeatures">
+		<defName>ACEN_1_2_0</defName>
+		<assemblyVersion>1.2.0</assemblyVersion>
+		<content>You may now configure when ACEN closes notifications in the mod's menu (default: after 12 hours).\n\nTo access the mod's menu, go to Mod Settings in RimWorld's Options menu.</content>
+	</HugsLib.UpdateFeatureDef>
+
 </Defs>

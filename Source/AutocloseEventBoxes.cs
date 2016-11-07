@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Reflection;
 using Verse;
 using UnityEngine;
-using System.Reflection;
 
 namespace AutocloseEN
 {
@@ -17,6 +17,8 @@ namespace AutocloseEN
 
 		internal static bool CloseUrgent = false;
 
+        internal static float ACENTimer = 36f;
+
 		public override void MapComponentTick()
 		{
 			if (Find.TickManager.TicksGame % 3600 == 0)
@@ -27,7 +29,7 @@ namespace AutocloseEN
 					for (int i = 0; i < letters.Count; i++)
 					{
 						float timeactive = Time.time - letters[i].arrivalTime;
-						if (timeactive >= 34f)
+						if (timeactive >= ACENTimer)
 						{
 							if (letters[i].LetterType == LetterType.Good && CloseGood == true)
 							{

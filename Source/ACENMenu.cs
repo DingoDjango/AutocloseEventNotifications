@@ -1,5 +1,6 @@
 ﻿using HugsLib;
 using RimWorld;
+using Verse;
 
 namespace AutocloseEN
 {
@@ -25,19 +26,19 @@ namespace AutocloseEN
 
 		private void UpdateDefs()
 		{
-			var timetoClose = Settings.GetHandle<float>("ACENTimetoClose", "Close notifications after X hours", "ACEN will close notifications if they have been active for more than the defined amount of in-game hours.", 12f);
+			var timetoClose = Settings.GetHandle<int>("ACENTimetoClose", "setting_timetoClose_label".Translate(), "setting_timetoClose_desc".Translate(), 12);
 			AutocloseEventBoxes.ACENTimer = GenDate.TicksPerHour * timetoClose.Value;
 
-			var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "Show message when closing notifications", "A silent message will be displayed when removing old notifications.", false);
+			var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "setting_showMessage_label".Translate(), "setting_showMessage_desc".Translate(), false);
 			AutocloseEventBoxes.ShowMessage = showMessage.Value;
 
-			var closeGood = Settings.GetHandle<bool>("ACENCloseGood", "Autoclose good (blue) notifications", "ACEN will automatically close positive (blue) event notifications.", true);
+			var closeGood = Settings.GetHandle<bool>("ACENCloseGood", "setting_closeGood_label".Translate(), "setting_closeGood_desc".Translate(), true);
 			AutocloseEventBoxes.CloseGood = closeGood.Value;
 
-			var closeNonUrgent = Settings.GetHandle<bool>("ACENCloseNonUrgent", "Autoclose bad (yellow) notifications", "ACEN will automatically close negative (yellow) event notifications.", true);
+			var closeNonUrgent = Settings.GetHandle<bool>("ACENCloseNonUrgent", "setting_closeNonUrgent_label".Translate(), "setting_closeNonUrgent_desc".Translate(), true);
 			AutocloseEventBoxes.CloseNonUrgent = closeNonUrgent.Value;
 
-			var closeUrgent = Settings.GetHandle<bool>("ACENCloseUrgent", "Autoclose urgent (red) notifications", "ACEN will automatically close urgent (red) event notifications.", false);
+			var closeUrgent = Settings.GetHandle<bool>("ACENCloseUrgent", "setting_closeUrgent_label".Translate(), "setting_closeUrgent_desc".Translate(), false);
 			AutocloseEventBoxes.CloseUrgent = closeUrgent.Value;
 		}
 	}

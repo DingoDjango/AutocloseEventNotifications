@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <setting_timetoClose_label>Close notifications after X hours</setting_timetoClose_label>
+	<setting_timetoClose_desc>ACEN will close notifications if they have been active for more than the defined amount of in-game hours.</setting_timetoClose_desc>
+
+	<setting_showMessage_label>Show message when closing notifications</setting_showMessage_label>
+	<setting_showMessage_desc>A silent message will be displayed when removing old notifications.</setting_showMessage_desc>
+
+	<setting_closeGood_label>Autoclose good (blue) notifications</setting_closeGood_label>
+	<setting_closeGood_desc>ACEN will automatically close positive (blue) event notifications.</setting_closeGood_desc>
+
+	<setting_closeNonUrgent_label>Autoclose bad (yellow) notifications</setting_closeNonUrgent_label>
+	<setting_closeNonUrgent_desc>ACEN will automatically close negative (yellow) event notifications.</setting_closeNonUrgent_desc>
+
+	<setting_closeUrgent_label>Autoclose urgent (red) notifications</setting_closeUrgent_label>
+	<setting_closeUrgent_desc>ACEN will automatically close urgent (red) event notifications.</setting_closeUrgent_desc>
+
+	<message_removed_good>Autoclose Event Notifications removed a positive (blue) notification.</message_removed_good>
+	<message_removed_nonUrgent>Autoclose Event Notifications removed a negative (yellow) notification.</message_removed_nonUrgent>
+	<message_removed_urgent>Autoclose Event Notifications removed an urgent (red) notification.</message_removed_urgent>
+
+</LanguageData>

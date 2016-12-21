@@ -16,29 +16,29 @@ namespace AutocloseEN
 
 		public override void DefsLoaded()
 		{
-			UpdateDefs();
+			ACENDefs();
 		}
 
 		public override void SettingsChanged()
 		{
-			UpdateDefs();
+			ACENDefs();
 		}
 
-		private void UpdateDefs()
+		private void ACENDefs()
 		{
-			var timetoClose = Settings.GetHandle<int>("ACENTimetoClose", "setting_timetoClose_label".Translate(), "setting_timetoClose_desc".Translate(), 12);
+			var timetoClose = Settings.GetHandle<int>("ACENTimetoClose", "ACEN_setting_timetoClose_label".Translate(), "ACEN_setting_timetoClose_desc".Translate(), 12);
 			AutocloseEventBoxes.ACENTimer = GenDate.TicksPerHour * timetoClose.Value;
 
-			var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "setting_showMessage_label".Translate(), "setting_showMessage_desc".Translate(), false);
+			var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "ACEN_setting_showMessage_label".Translate(), "ACEN_setting_showMessage_desc".Translate(), false);
 			AutocloseEventBoxes.ShowMessage = showMessage.Value;
 
-			var closeGood = Settings.GetHandle<bool>("ACENCloseGood", "setting_closeGood_label".Translate(), "setting_closeGood_desc".Translate(), true);
+			var closeGood = Settings.GetHandle<bool>("ACENCloseGood", "ACEN_setting_closeGood_label".Translate(), "ACEN_setting_closeGood_desc".Translate(), true);
 			AutocloseEventBoxes.CloseGood = closeGood.Value;
 
-			var closeNonUrgent = Settings.GetHandle<bool>("ACENCloseNonUrgent", "setting_closeNonUrgent_label".Translate(), "setting_closeNonUrgent_desc".Translate(), true);
+			var closeNonUrgent = Settings.GetHandle<bool>("ACENCloseNonUrgent", "ACEN_setting_closeNonUrgent_label".Translate(), "ACEN_setting_closeNonUrgent_desc".Translate(), true);
 			AutocloseEventBoxes.CloseNonUrgent = closeNonUrgent.Value;
 
-			var closeUrgent = Settings.GetHandle<bool>("ACENCloseUrgent", "setting_closeUrgent_label".Translate(), "setting_closeUrgent_desc".Translate(), false);
+			var closeUrgent = Settings.GetHandle<bool>("ACENCloseUrgent", "ACEN_setting_closeUrgent_label".Translate(), "ACEN_setting_closeUrgent_desc".Translate(), false);
 			AutocloseEventBoxes.CloseUrgent = closeUrgent.Value;
 		}
 	}

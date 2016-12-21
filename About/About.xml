@@ -3,7 +3,7 @@
 	<name>Autoclose Event Notifications</name>
 	<author>Dingo</author>
 	<url>https://ludeon.com/forums/index.php?topic=26077</url>
-	<targetVersion>0.15.0</targetVersion>
+	<targetVersion>0.16.0</targetVersion>
 	<description>Ever get tired of right-clicking those notifications like "New Lovers" or "Eclipse"?
 
 This mod automatically closes old notifications (default: after 12 in-game hours).

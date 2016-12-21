@@ -21,11 +21,16 @@ namespace AutocloseEN
 
 		internal static int ACENTimer = 12 * GenDate.TicksPerHour; //12 in-game hours by default
 
+		public AutocloseEventBoxes(Map map) : base(map)
+		{
+		}
+
 		public override void MapComponentTick()
 		{
 			if (Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
 			{
 				var letters = letterStack.GetValue(Find.LetterStack) as List<Letter>;
+
 				if (letters.Count > 0)
 				{
 					for (int i = letters.Count - 1; i >= 0; i--)
@@ -48,23 +53,25 @@ namespace AutocloseEN
 								Find.LetterStack.RemoveLetter(letter);
 								if (ShowMessage)
 								{
-									Messages.Message("message_removed_good".Translate(), MessageSound.Silent);
+									Messages.Message("ACEN_message_removed_good".Translate(), MessageSound.Silent);
 								}
 							}
+
 							if (letter.LetterType == LetterType.BadNonUrgent && CloseNonUrgent)
 							{
 								Find.LetterStack.RemoveLetter(letter);
 								if (ShowMessage)
 								{
-									Messages.Message("message_removed_nonUrgent".Translate(), MessageSound.Silent);
+									Messages.Message("ACEN_message_removed_nonUrgent".Translate(), MessageSound.Silent);
 								}
 							}
+
 							if (letter.LetterType == LetterType.BadUrgent && CloseUrgent)
 							{
 								Find.LetterStack.RemoveLetter(letter);
 								if (ShowMessage)
 								{
-									Messages.Message("message_removed_urgent".Translate(), MessageSound.Silent);
+									Messages.Message("ACEN_message_removed_urgent".Translate(), MessageSound.Silent);
 								}
 							}
 						}

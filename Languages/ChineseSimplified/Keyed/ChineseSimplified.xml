@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<setting_timetoClose_label>在 X 小时之后移除通知</setting_timetoClose_label>
+	<setting_timetoClose_desc>ACEN会自动将那些已经显示了设定时间（游戏时间）的通知移除。</setting_timetoClose_desc>
+
+	<setting_showMessage_label>在关闭通知时显示提示</setting_showMessage_label>
+	<setting_showMessage_desc>在移除旧通知时显示一条提示。</setting_showMessage_desc>
+
+	<setting_closeGood_label>自动关闭有益（蓝色）事件的通知</setting_closeGood_label>
+	<setting_closeGood_desc>ACEN会自动关闭有益（蓝色）事件的通知。</setting_closeGood_desc>
+
+	<setting_closeNonUrgent_label>自动关闭无益（黄色）事件的通知</setting_closeNonUrgent_label>
+	<setting_closeNonUrgent_desc>ACEN会自动关闭无益（黄色）事件的通知。</setting_closeNonUrgent_desc>
+
+	<setting_closeUrgent_label>自动关闭紧急（红色）事件的通知</setting_closeUrgent_label>
+	<setting_closeUrgent_desc>ACEN会自动关闭紧急（红色）事件的通知。</setting_closeUrgent_desc>
+
+	<message_removed_good>移除了一条有益（蓝色）事件的通知。</message_removed_good>
+	<message_removed_nonUrgent>移除了一条无益（黄色）事件的通知。</message_removed_nonUrgent>
+	<message_removed_urgent>移除了一条紧急（红色）事件的通知。</message_removed_urgent>
+
+</LanguageData>

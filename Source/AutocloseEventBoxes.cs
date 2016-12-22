@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using HugsLib.Utils;
+using System.Collections.Generic;
 using System.Reflection;
 using RimWorld;
 using Verse;
@@ -23,6 +24,7 @@ namespace AutocloseEN
 
 		public AutocloseEventBoxes(Map map) : base(map)
 		{
+			MapComponentUtility.EnsureIsActive(this);
 		}
 
 		public override void MapComponentTick()

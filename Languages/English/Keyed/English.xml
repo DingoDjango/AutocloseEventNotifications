@@ -16,8 +16,7 @@
 	<ACEN_setting_closeUrgent_label>Autoclose urgent (red) notifications</ACEN_setting_closeUrgent_label>
 	<ACEN_setting_closeUrgent_desc>ACEN will automatically close urgent (red) event notifications.</ACEN_setting_closeUrgent_desc>
 
-	<ACEN_message_removed_good>Autoclose Event Notifications removed a positive (blue) notification.</ACEN_message_removed_good>
-	<ACEN_message_removed_nonUrgent>Autoclose Event Notifications removed a negative (yellow) notification.</ACEN_message_removed_nonUrgent>
-	<ACEN_message_removed_urgent>Autoclose Event Notifications removed an urgent (red) notification.</ACEN_message_removed_urgent>
+	<ACEN_message_part1>removed</ACEN_message_part1>
+	<ACEN_message_part2>from the recent events list.</ACEN_message_part2>
 
 </LanguageData>

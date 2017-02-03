@@ -8,7 +8,10 @@ namespace AutocloseEN
 {
 	public class AutocloseEventBoxes : MapComponent
 	{
+		//Get the private letter list from LetterStack
 		static readonly FieldInfo letterStack = typeof(LetterStack).GetField("letters", BindingFlags.NonPublic | BindingFlags.Instance);
+
+		internal static int ACENTimer = 12 * GenDate.TicksPerHour; //12 in-game hours by default
 
 		internal static bool ShowMessage = false;
 
@@ -20,11 +23,9 @@ namespace AutocloseEN
 
 		internal static Dictionary<Letter, int> letterSpawnTicks = new Dictionary<Letter, int>();
 
-		internal static int ACENTimer = 12 * GenDate.TicksPerHour; //12 in-game hours by default
-
 		public AutocloseEventBoxes(Map map) : base(map)
 		{
-			MapComponentUtility.EnsureIsActive(this);
+			this.EnsureIsActive();
 		}
 
 		public override void MapComponentTick()
@@ -47,33 +48,37 @@ namespace AutocloseEN
 						}
 
 						var deltaTick = Find.TickManager.TicksGame - arrivalTick;
+						string userNotification = "Autoclose Event Notifications: " + "ACEN_message_part1".Translate() + " '" + letter.label + "' " + "ACEN_message_part2".Translate();
 
 						if (deltaTick >= ACENTimer)
 						{
 							if (letter.LetterType == LetterType.Good && CloseGood)
 							{
 								Find.LetterStack.RemoveLetter(letter);
+
 								if (ShowMessage)
 								{
-									Messages.Message("ACEN_message_removed_good".Translate(), MessageSound.Silent);
+									Messages.Message(userNotification, MessageSound.Silent);
 								}
 							}
 
 							if (letter.LetterType == LetterType.BadNonUrgent && CloseNonUrgent)
 							{
 								Find.LetterStack.RemoveLetter(letter);
+
 								if (ShowMessage)
 								{
-									Messages.Message("ACEN_message_removed_nonUrgent".Translate(), MessageSound.Silent);
+									Messages.Message(userNotification, MessageSound.Silent);
 								}
 							}
 
 							if (letter.LetterType == LetterType.BadUrgent && CloseUrgent)
 							{
 								Find.LetterStack.RemoveLetter(letter);
+
 								if (ShowMessage)
 								{
-									Messages.Message("ACEN_message_removed_urgent".Translate(), MessageSound.Silent);
+									Messages.Message(userNotification, MessageSound.Silent);
 								}
 							}
 						}

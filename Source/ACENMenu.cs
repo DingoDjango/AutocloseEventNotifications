@@ -27,7 +27,7 @@ namespace AutocloseEN
 		private void ACENDefs()
 		{
 			var timetoClose = Settings.GetHandle<int>("ACENTimetoClose", "ACEN_setting_timetoClose_label".Translate(), "ACEN_setting_timetoClose_desc".Translate(), 12);
-			AutocloseEventBoxes.ACENTimer = GenDate.TicksPerHour * timetoClose.Value;
+			AutocloseEventBoxes.ACENTimer = timetoClose.Value * GenDate.TicksPerHour;
 
 			var showMessage = Settings.GetHandle<bool>("ACENShowMessage", "ACEN_setting_showMessage_label".Translate(), "ACEN_setting_showMessage_desc".Translate(), false);
 			AutocloseEventBoxes.ShowMessage = showMessage.Value;

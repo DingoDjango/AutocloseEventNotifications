@@ -1,44 +1,34 @@
-﻿using HugsLib.Utils;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using RimWorld;
 using Verse;
+using System.Reflection;
+using RimWorld.Planet;
 
 namespace AutocloseEN
 {
-	public class AutocloseEventBoxes : MapComponent
+	public class AutocloseEventBoxes : WorldComponent
 	{
 		//Get the private letter list from LetterStack
 		static readonly FieldInfo letterStack = typeof(LetterStack).GetField("letters", BindingFlags.NonPublic | BindingFlags.Instance);
 
-		internal static int ACENTimer = 12 * GenDate.TicksPerHour; //12 in-game hours by default
-
-		internal static bool ShowMessage = false;
-
-		internal static bool CloseGood = true;
-
-		internal static bool CloseNonUrgent = true;
-
-		internal static bool CloseUrgent = false;
-
+		//Dictionary keeps track of letter arrival times
 		internal static Dictionary<Letter, int> letterSpawnTicks = new Dictionary<Letter, int>();
 
-		public AutocloseEventBoxes(Map map) : base(map)
+		public AutocloseEventBoxes(World world) : base(world)
 		{
-			this.EnsureIsActive();
 		}
 
-		public override void MapComponentTick()
+		public override void WorldComponentTick()
 		{
 			if (Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
 			{
-				var letters = letterStack.GetValue(Find.LetterStack) as List<Letter>;
+				var activeLetters = letterStack.GetValue(Find.LetterStack) as List<Letter>;
 
-				if (letters.Count > 0)
+				if (activeLetters.Count > 0)
 				{
-					for (int i = letters.Count - 1; i >= 0; i--)
+					for (int i = activeLetters.Count - 1; i >= 0; i--)
 					{
-						var letter = letters[i];
+						var letter = activeLetters[i];
 						int arrivalTick;
 
 						if (!letterSpawnTicks.TryGetValue(letter, out arrivalTick))
@@ -48,35 +38,36 @@ namespace AutocloseEN
 						}
 
 						var deltaTick = Find.TickManager.TicksGame - arrivalTick;
-						string userNotification = "Autoclose Event Notifications: " + "ACEN_message_part1".Translate() + " '" + letter.label + "' " + "ACEN_message_part2".Translate();
 
-						if (deltaTick >= ACENTimer)
+						if (deltaTick >= (Settings.ACENTimer * GenDate.TicksPerHour))
 						{
-							if (letter.LetterType == LetterType.Good && CloseGood)
+							string userNotification = "Autoclose Event Notifications: " + "ACEN_message_part1".Translate() + " '" + letter.label + "' " + "ACEN_message_part2".Translate();
+
+							if (letter.def.defName == "Good" && Settings.CloseGood)
 							{
 								Find.LetterStack.RemoveLetter(letter);
 
-								if (ShowMessage)
+								if (Settings.ShowMessage)
 								{
 									Messages.Message(userNotification, MessageSound.Silent);
 								}
 							}
 
-							if (letter.LetterType == LetterType.BadNonUrgent && CloseNonUrgent)
+							if (letter.def.defName == "BadNonUrgent" && Settings.CloseNonUrgent)
 							{
 								Find.LetterStack.RemoveLetter(letter);
 
-								if (ShowMessage)
+								if (Settings.ShowMessage)
 								{
 									Messages.Message(userNotification, MessageSound.Silent);
 								}
 							}
 
-							if (letter.LetterType == LetterType.BadUrgent && CloseUrgent)
+							if (letter.def.defName == "BadUrgent" && Settings.CloseUrgent)
 							{
 								Find.LetterStack.RemoveLetter(letter);
 
-								if (ShowMessage)
+								if (Settings.ShowMessage)
 								{
 									Messages.Message(userNotification, MessageSound.Silent);
 								}

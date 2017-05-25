@@ -3,16 +3,12 @@
 	<name>Autoclose Event Notifications</name>
 	<author>Dingo</author>
 	<url>https://ludeon.com/forums/index.php?topic=26077</url>
-	<targetVersion>0.16.0</targetVersion>
-	<description>&lt;color=red&gt;&lt;size=24&gt;Important:&lt;/size&gt;
-
-This mod requires &lt;b&gt;HugsLib&lt;/b&gt;, it must be installed and loaded above this mod in the load order.&lt;/color&gt;
-
-Ever get tired of right-clicking those notifications like "New Lovers" or "Eclipse"?
+	<targetVersion>0.17.0</targetVersion>
+	<description>Ever get tired of right-clicking those notifications like "New Lovers" or "Eclipse"?
 
 This mod automatically closes old notifications (default: after 12 in-game hours).
 
 By default, only good (blue) and non-urgent (yellow) notifications are closed.
 
-You can configure every aspect of the mod in the Mod Settings menu, accessed via RimWorld's Options menu.</description>
+You can configure every aspect of the mod by going into &lt;color=orange&gt;Options > Mod Settings&lt;/color&gt;.</description>
 </ModMetaData>

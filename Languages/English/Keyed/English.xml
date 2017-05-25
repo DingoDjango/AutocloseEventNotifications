@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<ACEN_setting_timetoClose_label>Close notifications after X hours</ACEN_setting_timetoClose_label>
-	<ACEN_setting_timetoClose_desc>ACEN will close notifications if they have been active for more than the defined amount of in-game hours.</ACEN_setting_timetoClose_desc>
+	<ACEN>Autoclose Event Notifications</ACEN>
 
-	<ACEN_setting_showMessage_label>Show message when closing notifications</ACEN_setting_showMessage_label>
+	<ACEN_setting_timetoClose_label>Close notifications after &lt;b&gt;&lt;color=orange&gt;{0}&lt;/color&gt;&lt;/b&gt; hours</ACEN_setting_timetoClose_label>
+
+	<ACEN_setting_showMessage_label>Show a message when closing notifications</ACEN_setting_showMessage_label>
 	<ACEN_setting_showMessage_desc>A silent message will be displayed when removing old notifications.</ACEN_setting_showMessage_desc>
 
-	<ACEN_setting_closeGood_label>Autoclose good (blue) notifications</ACEN_setting_closeGood_label>
+	<ACEN_setting_closeGood_label>Autoclose good &lt;b&gt;&lt;color=cyan&gt;(blue)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeGood_label>
 	<ACEN_setting_closeGood_desc>ACEN will automatically close positive (blue) event notifications.</ACEN_setting_closeGood_desc>
 
-	<ACEN_setting_closeNonUrgent_label>Autoclose bad (yellow) notifications</ACEN_setting_closeNonUrgent_label>
+	<ACEN_setting_closeNonUrgent_label>Autoclose bad &lt;b&gt;&lt;color=yellow&gt;(yellow)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeNonUrgent_label>
 	<ACEN_setting_closeNonUrgent_desc>ACEN will automatically close negative (yellow) event notifications.</ACEN_setting_closeNonUrgent_desc>
 
-	<ACEN_setting_closeUrgent_label>Autoclose urgent (red) notifications</ACEN_setting_closeUrgent_label>
+	<ACEN_setting_closeUrgent_label>Autoclose urgent &lt;b&gt;&lt;color=orangered&gt;(red)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeUrgent_label>
 	<ACEN_setting_closeUrgent_desc>ACEN will automatically close urgent (red) event notifications.</ACEN_setting_closeUrgent_desc>
 
 	<ACEN_message_part1>removed</ACEN_message_part1>
-	<ACEN_message_part2>from the recent events list.</ACEN_message_part2>
+	<ACEN_message_part2>from the list.</ACEN_message_part2>
 
 </LanguageData>

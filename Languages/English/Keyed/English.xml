@@ -14,7 +14,7 @@
 	<ACEN_setting_closeNonUrgent_label>Autoclose bad &lt;b&gt;&lt;color=yellow&gt;(yellow)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeNonUrgent_label>
 	<ACEN_setting_closeNonUrgent_desc>ACEN will automatically close negative (yellow) event notifications.</ACEN_setting_closeNonUrgent_desc>
 
-	<ACEN_setting_closeUrgent_label>Autoclose urgent &lt;b&gt;&lt;color=orangered&gt;(red)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeUrgent_label>
+	<ACEN_setting_closeUrgent_label>Autoclose urgent &lt;b&gt;&lt;color=red&gt;(red)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeUrgent_label>
 	<ACEN_setting_closeUrgent_desc>ACEN will automatically close urgent (red) event notifications.</ACEN_setting_closeUrgent_desc>
 
 	<ACEN_message_part1>removed</ACEN_message_part1>

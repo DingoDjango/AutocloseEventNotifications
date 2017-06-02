@@ -41,7 +41,7 @@ namespace AutocloseEN
 
 						if (deltaTick >= (Settings.ACENTimer * GenDate.TicksPerHour))
 						{
-							string userNotification = "Autoclose Event Notifications: " + "ACEN_message_part1".Translate() + " '" + letter.label + "' " + "ACEN_message_part2".Translate();
+							string userNotification = "ACEN".Translate() + ": " + "ACEN_message_part1".Translate() + " '" + letter.label + "' " + "ACEN_message_part2".Translate();
 
 							if (letter.def.defName == "Good" && Settings.CloseGood)
 							{

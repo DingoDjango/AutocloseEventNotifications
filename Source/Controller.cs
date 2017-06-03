@@ -15,8 +15,6 @@ namespace AutocloseEN
 			base.WriteSettings();
 		}
 
-		internal IntRange timerRange = new IntRange(0, 999);
-
 		public override void DoSettingsWindowContents(Rect inRect)
 		{
 			Listing_Standard list = new Listing_Standard();
@@ -44,7 +42,7 @@ namespace AutocloseEN
 				}
 
 				//Set timer value (slider).
-				Settings.ACENTimer = Mathf.RoundToInt(Widgets.HorizontalSlider(new Rect(currentRectRight.xMin + currentRectRight.height + 10f, currentRectRight.y, currentRectRight.width - (currentRectRight.height * 2 + 20f), currentRectRight.center.y), Settings.ACENTimer, 0, 120, true, null, null, null, -1f));
+				Settings.ACENTimer = Mathf.RoundToInt(Widgets.HorizontalSlider(new Rect(currentRectRight.xMin + currentRectRight.height + 10f, currentRectRight.y, currentRectRight.width - (currentRectRight.height * 2 + 20f), currentRectRight.height), Settings.ACENTimer, 0, 120, true));
 
 				//Increment timer value by +1 (button).
 				if (Widgets.ButtonText(new Rect(currentRectRight.xMax - currentRectRight.height, currentRectRight.y, currentRectRight.height, currentRectRight.height), "+", true, false, true))

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using RimWorld;
-using Verse;
 using System.Reflection;
+using RimWorld;
 using RimWorld.Planet;
+using Verse;
 
 namespace AutocloseEN
 {

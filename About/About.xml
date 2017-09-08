@@ -4,11 +4,9 @@
 	<author>Dingo</author>
 	<url>https://ludeon.com/forums/index.php?topic=26077</url>
 	<targetVersion>0.17.0</targetVersion>
-	<description>Ever get tired of right-clicking those notifications like "New Lovers" or "Eclipse"?
+	<description>Automatically close old notifications ("letters") according to fully-configurable preferences.
 
-This mod automatically closes old notifications (default: after 12 in-game hours).
+Choose which letter types are closed (good and non-urgent by default) and when.
 
-By default, only good (blue) and non-urgent (yellow) notifications are closed.
-
-You can configure every aspect of the mod by going into &lt;color=orange&gt;Options > Mod Settings&lt;/color&gt;.</description>
+Mod preferences are found in &lt;color=orange&gt;Options > Mod Settings&lt;/color&gt;.</description>
 </ModMetaData>

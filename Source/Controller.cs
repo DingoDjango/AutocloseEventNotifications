@@ -1,81 +1,114 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Verse;
 
-namespace AutocloseEN
+namespace AutocloseEventNotifications
 {
 	public class Controller : Mod
 	{
+		private List<LetterDef> letterDefs;
+
+		private string labelTimer;
+		private string labelShowMessage;
+		private string descShowMessage;
+		private string labelCloseLetterType;
+		private string descCloseLetterType;
+
+		private Vector2 scrollPosition = Vector2.zero;
+
 		public Controller(ModContentPack content) : base(content)
 		{
 			GetSettings<Settings>();
 		}
 
-		public override void WriteSettings()
-		{
-			base.WriteSettings();
-		}
-
 		public override void DoSettingsWindowContents(Rect inRect)
 		{
-			Listing_Standard list = new Listing_Standard();
-			list.ColumnWidth = inRect.width;
-			list.Begin(inRect);
-
-			list.Gap(20f);
-
+			//Can't assign values on startup because mods are loaded too early
+			if (this.labelTimer == default(string))
 			{
-				Rect currentRect = list.GetRect(Text.LineHeight);
-				Rect currentRectLeft = currentRect.LeftHalf().Rounded();
-				Rect currentRectRight = currentRect.RightHalf().Rounded();
-				string ACENTimer_label = "ACEN_setting_timetoClose_label".Translate(new object[] { Settings.ACENTimer });
+				this.letterDefs = DefDatabase<LetterDef>.AllDefsListForReading;
 
-				//Text label for timer settings, translated.
-				Widgets.Label(currentRectLeft, ACENTimer_label);
+				this.labelTimer = "ACEN_ACENTimer_Label".Translate();
+				this.labelShowMessage = "ACEN_ShowMessage_Label".Translate();
+				this.descShowMessage = "ACEN_ShowMessage_Desc".Translate();
+				this.labelCloseLetterType = "ACEN_CloseType_Label".Translate();
+				this.descCloseLetterType = "ACEN_CloseType_Desc".Translate();
+			}
 
-				//Increment timer value by -1 (button).
-				if (Widgets.ButtonText(new Rect(currentRectRight.xMin, currentRectRight.y, currentRectRight.height, currentRectRight.height), "-", true, false, true))
+			Text.Font = GameFont.Small;
+			float buttonHeight = Text.LineHeight;
+
+			Rect listRect = new Rect(inRect.x, inRect.y + 20f, inRect.width - 20f, (buttonHeight + 20f) * (2 + this.letterDefs.Count));
+
+			Widgets.BeginScrollView(inRect, ref this.scrollPosition, listRect, true);
+
+			Vector2 mousePosition = Event.current.mousePosition;
+
+			float currentY = listRect.y;
+
+			float rectsX = listRect.x;
+			float rectsWidth = listRect.width;
+
+			Rect timerRect = new Rect(rectsX, currentY, rectsWidth, buttonHeight);
+			Rect minusButtonRect = new Rect(timerRect.xMax - rectsWidth / 2f, currentY, buttonHeight, buttonHeight);
+			Rect sliderRect = new Rect(minusButtonRect.xMax + 10f, currentY, rectsWidth / 2f - (2 * buttonHeight + 20f), buttonHeight);
+			Rect plusButtonRect = new Rect(sliderRect.xMax + 10f, currentY, buttonHeight, buttonHeight);
+
+			//Text label for timer settings (shows the timer integer in colour)
+			Text.Anchor = TextAnchor.MiddleLeft;
+			Widgets.Label(timerRect, string.Format(this.labelTimer, Settings.ACENTimer));
+			Text.Anchor = TextAnchor.UpperLeft; //Reset
+
+			//Increment timer value by -1 (button).
+			if (Widgets.ButtonText(minusButtonRect, "-", true, false, true) && Settings.ACENTimer > 0)
+			{
+				Settings.ACENTimer--;
+			}
+
+			//Set timer value (slider).
+			Settings.ACENTimer = Mathf.RoundToInt(Widgets.HorizontalSlider(sliderRect, Settings.ACENTimer, 0, 120, true));
+
+			//Increment timer value by +1 (button).
+			if (Widgets.ButtonText(plusButtonRect, "+", true, false, true) && Settings.ACENTimer < 120)
+			{
+				Settings.ACENTimer++;
+			}
+
+			currentY += buttonHeight + 20f;
+
+			Rect showMessageRect = new Rect(rectsX, currentY, rectsWidth, buttonHeight);
+
+			Widgets.CheckboxLabeled(showMessageRect, this.labelShowMessage, ref Settings.ShowMessage);
+
+			if (showMessageRect.Contains(mousePosition))
+			{
+				Widgets.DrawHighlight(showMessageRect);
+				TooltipHandler.TipRegion(showMessageRect, this.descShowMessage);
+			}
+
+			for (int i = 0; i < this.letterDefs.Count; i++)
+			{
+				currentY += buttonHeight + 20f;
+
+				LetterPrefs pref = Settings.PrefByLetterDef(this.letterDefs[i]);
+
+				Rect curPrefRect = new Rect(rectsX, currentY, rectsWidth, buttonHeight);
+
+				Widgets.CheckboxLabeled(curPrefRect, string.Format(this.labelCloseLetterType, pref.colouredLabel), ref pref.closePreference);
+
+				if (curPrefRect.Contains(mousePosition))
 				{
-					if (Settings.ACENTimer <= 120 && Settings.ACENTimer > 0)
-					{
-						Settings.ACENTimer--;
-					}
-				}
-
-				//Set timer value (slider).
-				Settings.ACENTimer = Mathf.RoundToInt(Widgets.HorizontalSlider(new Rect(currentRectRight.xMin + currentRectRight.height + 10f, currentRectRight.y, currentRectRight.width - (currentRectRight.height * 2 + 20f), currentRectRight.height), Settings.ACENTimer, 0, 120, true));
-
-				//Increment timer value by +1 (button).
-				if (Widgets.ButtonText(new Rect(currentRectRight.xMax - currentRectRight.height, currentRectRight.y, currentRectRight.height, currentRectRight.height), "+", true, false, true))
-				{
-					if (Settings.ACENTimer < 120 && Settings.ACENTimer >= 0)
-					{
-						Settings.ACENTimer++;
-					}
+					Widgets.DrawHighlight(curPrefRect);
+					TooltipHandler.TipRegion(curPrefRect, this.descCloseLetterType);
 				}
 			}
 
-			list.Gap(20f);
-
-			list.CheckboxLabeled("ACEN_setting_showMessage_label".Translate(), ref Settings.ShowMessage, "ACEN_setting_showMessage_desc".Translate());
-
-			list.Gap(20f);
-
-			list.CheckboxLabeled("ACEN_setting_closeGood_label".Translate(), ref Settings.CloseGood, "ACEN_setting_closeGood_desc".Translate());
-
-			list.Gap(20f);
-
-			list.CheckboxLabeled("ACEN_setting_closeNonUrgent_label".Translate(), ref Settings.CloseNonUrgent, "ACEN_setting_closeNonUrgent_desc".Translate());
-
-			list.Gap(20f);
-
-			list.CheckboxLabeled("ACEN_setting_closeUrgent_label".Translate(), ref Settings.CloseUrgent, "ACEN_setting_closeUrgent_desc".Translate());
-
-			list.End();
+			Widgets.EndScrollView();
 		}
 
 		public override string SettingsCategory()
 		{
-			return "ACEN".Translate();
+			return "Autoclose Event Notifications";
 		}
 	}
 }

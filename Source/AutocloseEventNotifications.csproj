@@ -47,9 +47,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutocloseEventBoxes.cs" />
+    <Compile Include="LetterManager.cs" />
     <Compile Include="Controller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="LetterPrefs.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup />

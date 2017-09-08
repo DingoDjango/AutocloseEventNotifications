@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<ACEN>Autoclose Event Notifications</ACEN>
+	<ACEN_ACENTimer_Label>Close notifications after &lt;b&gt;&lt;color=orange&gt;{0}&lt;/color&gt;&lt;/b&gt; hours</ACEN_ACENTimer_Label>
 
-	<ACEN_setting_timetoClose_label>Close notifications after &lt;b&gt;&lt;color=orange&gt;{0}&lt;/color&gt;&lt;/b&gt; hours</ACEN_setting_timetoClose_label>
+	<ACEN_MessageText>ACEN: Removed "{0}"</ACEN_MessageText>
 
-	<ACEN_setting_showMessage_label>Show a message when closing notifications</ACEN_setting_showMessage_label>
-	<ACEN_setting_showMessage_desc>A silent message will be displayed when removing old notifications.</ACEN_setting_showMessage_desc>
+	<ACEN_ShowMessage_Label>Show a message when closing notifications</ACEN_ShowMessage_Label>
+	<ACEN_ShowMessage_Desc>A silent message will be displayed when removing old notifications.</ACEN_ShowMessage_Desc>
 
-	<ACEN_setting_closeGood_label>Autoclose good &lt;b&gt;&lt;color=cyan&gt;(blue)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeGood_label>
-	<ACEN_setting_closeGood_desc>ACEN will automatically close positive (blue) event notifications.</ACEN_setting_closeGood_desc>
-
-	<ACEN_setting_closeNonUrgent_label>Autoclose bad &lt;b&gt;&lt;color=yellow&gt;(yellow)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeNonUrgent_label>
-	<ACEN_setting_closeNonUrgent_desc>ACEN will automatically close negative (yellow) event notifications.</ACEN_setting_closeNonUrgent_desc>
-
-	<ACEN_setting_closeUrgent_label>Autoclose urgent &lt;b&gt;&lt;color=red&gt;(red)&lt;/color&gt;&lt;/b&gt; notifications</ACEN_setting_closeUrgent_label>
-	<ACEN_setting_closeUrgent_desc>ACEN will automatically close urgent (red) event notifications.</ACEN_setting_closeUrgent_desc>
-
-	<ACEN_message_part1>removed</ACEN_message_part1>
-	<ACEN_message_part2>from the list.</ACEN_message_part2>
+	<ACEN_CloseType_Label>Close {0} notifications</ACEN_CloseType_Label>
+	<ACEN_CloseType_Desc>Automatically close notifications of this type if they have been active for longer than the timer allows.</ACEN_CloseType_Desc>
 
 </LanguageData>

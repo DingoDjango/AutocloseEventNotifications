@@ -1,9 +1,7 @@
 ![Autoclose Event Notifications](http://i.imgur.com/ocSigpw.png)
 
-Ever get tired of right-clicking those notifications like "New Lovers" or "Eclipse"?
+Automatically close old notifications ("letters") according to fully-configurable preferences.
 
-This mod automatically closes old notifications (default: after 12 in-game hours).
+Choose which letter types are closed (good and non-urgent by default) and when.
 
-By default, only good (blue) and non-urgent (yellow) notifications are closed.
-
-The mod includes an options menu (**Options > Mod Settings**).
+Mod preferences are found in **Options > Mod Settings**.

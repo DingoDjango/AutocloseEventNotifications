@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<ACEN_ACENTimer_Label>Close notifications after &lt;b&gt;&lt;color=orange&gt;{0}&lt;/color&gt;&lt;/b&gt; hours</ACEN_ACENTimer_Label>
+	<!-- Mod Settings -->
 
-	<ACEN_MessageText>ACEN: Removed "{0}"</ACEN_MessageText>
+	<ACEN_Timer>Close notifications after this many hours: </ACEN_Timer>
 
-	<ACEN_ShowMessage_Label>Show a message when closing notifications</ACEN_ShowMessage_Label>
-	<ACEN_ShowMessage_Desc>A silent message will be displayed when removing old notifications.</ACEN_ShowMessage_Desc>
+	<ACEN_ShowMessages>Display a message post-close</ACEN_ShowMessages>
 
-	<ACEN_CloseType_Label>Close {0} notifications</ACEN_CloseType_Label>
-	<ACEN_CloseType_Desc>Automatically close notifications of this type if they have been active for longer than the timer allows.</ACEN_CloseType_Desc>
+	<ACEN_SetLetterPref>Close {0} notifications</ACEN_SetLetterPref>
+
+	<!-- Tooltips -->
+
+	<ACEN_Tooltip_Timer>The mod will wait for this many in-game hours before closing a notification.</ACEN_Tooltip_Timer>
+
+	<ACEN_Tooltip_ShowMessages>A silent message will be displayed when removing a notification.</ACEN_Tooltip_ShowMessages>
+
+	<ACEN_Tooltip_SetLetterPref>Close notifications of this type if they have been active for longer than the timer allows.</ACEN_Tooltip_SetLetterPref>
+
+	<!-- Messages -->
+
+	<ACEN_RemovedLetter>ACEN: Removed "{0}"</ACEN_RemovedLetter>
+
+	<!-- Custom LetterDef Names -->
+
+	<ACEN_RansomDemand>Ransom Demand</ACEN_RansomDemand>
+
+	<ACEN_ItemStashFeeDemand>Item Stash</ACEN_ItemStashFeeDemand>
+
+	<ACEN_ThreatBig>Big Threat</ACEN_ThreatBig>
+
+	<ACEN_ThreatSmall>Small Threat</ACEN_ThreatSmall>
+
+	<ACEN_NegativeEvent>Negative Event</ACEN_NegativeEvent>
+
+	<ACEN_NeutralEvent>Neutral Event</ACEN_NeutralEvent>
+
+	<ACEN_PositiveEvent>Positive Event</ACEN_PositiveEvent>
 
 </LanguageData>

@@ -4,10 +4,8 @@ using Verse;
 
 namespace AutocloseEventNotifications
 {
-	public class LetterManager : GameComponent
+	public class LetterCloser : GameComponent
 	{
-		private readonly string messageText = "ACEN_MessageText".Translate();
-
 		private Dictionary<Letter, int> letterSpawnTicks = new Dictionary<Letter, int>();
 
 		public override void GameComponentTick()
@@ -30,13 +28,13 @@ namespace AutocloseEventNotifications
 							this.letterSpawnTicks[letter] = ticksGame;
 						}
 
-						if (ticksGame - arrivalTick >= (Settings.ACENTimer * GenDate.TicksPerHour) && Settings.PrefByLetterDef(letter.def).closePreference)
+						if (ticksGame - arrivalTick >= (Controller.Timer * GenDate.TicksPerHour) && Controller.PrefByDef[letter.def])
 						{
 							Find.LetterStack.RemoveLetter(letter);
 
-							if (Settings.ShowMessage)
+							if (Controller.ShowMessages)
 							{
-								Messages.Message(string.Format(this.messageText, letter.label), MessageSound.Silent);
+								Messages.Message(string.Format("ACEN_RemovedLetter".Translate(), letter.label), MessageTypeDefOf.SilentInput);
 							}
 						}
 					}
@@ -44,12 +42,11 @@ namespace AutocloseEventNotifications
 			}
 		}
 
-		//Empty constructors due to A17 bug
-		public LetterManager()
+		public LetterCloser()
 		{
 		}
 
-		public LetterManager(Game game)
+		public LetterCloser(Game game)
 		{
 		}
 	}

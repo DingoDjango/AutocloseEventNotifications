@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Manifest>
+	<identifier>Dingo.AutocloseEventNotifications</identifier>
+	<version>1.5.8874.1</version>
+	<manifestUri>https://raw.githubusercontent.com/DingoDjango/AutocloseEventNotifications/master/Autoclose%20Event%20Notifications/About/Manifest.xml</manifestUri>
+	<downloadUri>https://github.com/DingoDjango/AutocloseEventNotifications/releases/latest</downloadUri>
+</Manifest>

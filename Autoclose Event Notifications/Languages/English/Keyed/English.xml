@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!-- Mod option - show message on letter close -->
+	<ACEN.ShowMessages>Display a message post-close</ACEN.ShowMessages>
+	<ACEN.ShowMessages.Tooltip>A silent message will be displayed when removing a notification.</ACEN.ShowMessages.Tooltip>
+
+	<!-- Mod option - when to close letters -->
+	<ACEN.Timer>Close notifications after this many hours: </ACEN.Timer>
+	<ACEN.Timer.Tooltip>The mod will wait for this many in-game hours before closing a notification.</ACEN.Timer.Tooltip>
+
+	<!-- Mod option - which letters to keep (others will be closed) -->
+	<ACEN.LettersToKeep>Letter types to keep</ACEN.LettersToKeep>
+	<ACEN.LettersToKeep.Tooltip>Do not close notification of this type or more important.\nFor example, major threat alerts won't be closed if "any threat" is chosen.</ACEN.LettersToKeep.Tooltip>
+
+	<!-- Messages -->
+	<ACEN.RemovedLetter>ACEN: Removed "{0}"</ACEN.RemovedLetter>
+
+	<!-- Replacement string for "Never" pause mode -->
+	<ACEN.AutomaticPauseMode_Never>Major (Other)</ACEN.AutomaticPauseMode_Never>
+
+</LanguageData>

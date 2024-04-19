@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ModMetaData>
+	<name>Autoclose Event Notifications</name>
+	<author>Dingo</author>
+	<packageId>Dingo.AutocloseEventNotifications</packageId>
+	<description>Automatically close old notifications ("letters") according to your preferences.
+
+You can choose which letter types are closed and when using the mod options menu.</description>
+<url>https://ludeon.com/forums/index.php?topic=26077</url>
+	<supportedVersions>
+		<li>1.5</li>
+	</supportedVersions>
+</ModMetaData>

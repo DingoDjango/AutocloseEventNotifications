@@ -17,6 +17,6 @@
 	<ACEN.RemovedLetter>ACEN: Removed "{0}"</ACEN.RemovedLetter>
 
 	<!-- Replacement string for "Never" pause mode -->
-	<ACEN.AutomaticPauseMode_Never>Major (Other)</ACEN.AutomaticPauseMode_Never>
+	<ACEN.AutomaticPauseMode_Never>None</ACEN.AutomaticPauseMode_Never>
 
 </LanguageData>
